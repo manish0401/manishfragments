@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/cardsFragment">
+
+    <fragment
+        android:id="@+id/cardsFragment"
+        android:name="com.example.recipeme.CardsFragment"
+        android:label="fragment_cards"
+        tools:layout="@layout/fragment_cards" >
+        <argument
+            android:name="sendingdata"
+            app:argType="string"/>
+        <action
+            android:id="@+id/action_cardsFragment_to_fragment2"
+            app:destination="@id/fragment2" />
+        <argument
+            android:name="CArdData"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment2"
+        android:name="com.example.recipeme.Fragment2"
+        android:label="fragment_2"
+        tools:layout="@layout/fragment_2" >
+        <action
+            android:id="@+id/action_fragment2_to_cardsFragment"
+            app:destination="@id/cardsFragment" />
+        <argument
+            android:name="CarddData"
+            app:argType="string" />
+    </fragment>
+</navigation>
